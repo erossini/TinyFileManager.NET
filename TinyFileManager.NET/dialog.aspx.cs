@@ -235,8 +235,8 @@ namespace TinyFileManager.NET
                     //check file was submitted
                     if ((filUpload != null) && (filUpload.ContentLength > 0))
                     {
-                        strTargetFile = this.objConfig.strUploadPath + this.strFolder + filUpload.FileName.ToLower();
-                        strThumbFile = this.objConfig.strThumbPath + this.strFolder + filUpload.FileName.ToLower();
+                        strTargetFile = this.objConfig.strUploadPath + this.strFolder + Path.GetFileName(filUpload.FileName.ToLower());
+                        strThumbFile = this.objConfig.strThumbPath + this.strFolder + Path.GetFileName(filUpload.FileName.ToLower());
                         filUpload.SaveAs(strTargetFile);
 
                         if (this.isImageFile(strTargetFile))
